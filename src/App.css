@@ -1,25 +1,146 @@
-.app {
-  height: 100vh;
-  width: 100vw;
-  transition: background-color 1s ease-in;
+*{
+  box-sizing: border-box;
 }
 
-.app__header,
-.app__main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  font-family: "Raleway", sans-serif;
+.app {
+  height: 100vh;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-family:"Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/*  Search bar */
-
-/* Current weather */
-
-div {
-  border: 5px solid red;
+.app__header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 40px;
+  background-color: rgb(104, 143, 211);
 }
+.main{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(161, 189, 236);
+  padding:40px ;
+}
+
+/*  Search bar */
+.Search__bar{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  flex-wrap: wrap;
+}
+.Search__input{
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: none;
+  width: 200px;
+  height: 60px;
+  font-size: 30px;
+}
+.Search__button{
+  background-color: rgb(65, 109, 185);
+  border: 1px solid black;
+  height: 120%;
+  font-weight: lighter;
+  font-size: 30px;
+  padding: 10px;
+
+}
+/* Current weather */
+.current__weather{
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
+}
+.current__style{
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.current__image{
+  width: 300px;
+}
+.current__status{
+  width: 100%;
+  /* color: rgb(36, 23, 114); */
+  justify-content: center;
+ 
+}
+.description{
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+.temperature{
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  width: 100%;
+  margin-top: 10px;
+}
+.humidity{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 15px;
+}
+.temperature__title{
+  font-size: 19px;
+}
+.temperature__title, .humidity__title, .pressure__title{
+  font-weight: bold;
+  color: rgb(13, 7, 44)
+}
+.temperature__value, .humidity__value, .pressure__value{
+  color: rgb(45, 45, 138);
+}
+.pressure__title{
+  margin-right: 15px;
+}
+/* days */
+.days__status{
+  width: 95%;
+  margin: 30px auto 0 auto;
+}
+.days__style{
+  width: 100%;
+  justify-content:space-around;
+  display: flex;
+  flex-wrap: wrap;
+}
+.days{
+  width: 120px;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  display: grid;
+}
+.days__img{
+  width: 140px;
+}
+
+@media (max-width: 650px) {
+  .app__header{
+    justify-content: center;
+  }
+  .Search__bar{
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: auto;
+  }
+}
+/* div {
+  border: 5px solid red;
+} */
