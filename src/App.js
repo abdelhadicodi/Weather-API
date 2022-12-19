@@ -6,8 +6,8 @@ import React, { Component } from "react";
 
 import "./App.css";
 
-import mostlyCloudy from "./img/weather-icons/mostlycloudy.svg";
-import clear from "./img/weather-icons/clear.svg";
+import Header from "./components/Header";
+import Content from "./components/Content"
 
 class App extends Component {
   constructor(props) {
@@ -27,14 +27,16 @@ class App extends Component {
         {/* <SayHi />
         <SayHello color="black" name={this.state.name} />
         <Search handleInput={this.handleInputChange} /> */}
-        <header className="app__header">
+        {/* <header className="app__header">
           <div className="Search__bar">
             <input className="Search__input" type="text" placeholder="city name"/>
             <button className="Search__button">Find Weather</button>
           </div>
-        </header>
-      <main className="main">
-          <div className="current__weather">
+        </header> */}
+        <Header />
+        <Content />
+      {/* <main className="main"> */}
+          {/* <div className="current__weather">
             <div className="current__style">
               <img className="current__image" src={mostlyCloudy} alt="cloudy"/>
               <div className="current__status">
@@ -51,8 +53,8 @@ class App extends Component {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="days__status">
+          </div> */}
+          {/* <div className="days__status">
             <div className="days__style">
               <div className="days">
                 <time>03:00</time>
@@ -91,8 +93,8 @@ class App extends Component {
               </div>
               </div>
 
-            </div>
-      </main>
+            </div> */}
+      {/* </main> */}
       </div>
     );
   }
