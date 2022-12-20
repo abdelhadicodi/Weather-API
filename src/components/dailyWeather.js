@@ -1,12 +1,25 @@
 import React, { Component } from "react";
-
 import clear from "../img/weather-icons/clear.svg";
 import mostlyCloudy from "../img/weather-icons/mostlycloudy.svg";
+import cloudy from "../img/weather-icons/cloudy.svg";
+import snow from "../img/weather-icons/snow.svg";
+import WeatherItem from "./Weatheritem";
 
-class dailyWeather extends React.Component {
+// import Weatheritem from "./Weatheritem";
+
+class DailyWeather extends React.Component {
+  constructor(props){
+    super(props)
+  }
     render() {
+    
         return (
             <div className="days__status">
+          <WeatherItem 
+          temperature={this.props.temprature}
+          time={this.props.time}
+          icon={this.props.icon} 
+          />
             <div className="days__style">
               <div className="days">
                 <time>03:00</time>
@@ -50,4 +63,5 @@ class dailyWeather extends React.Component {
     }
 }
 
-export default dailyWeather
+
+export default DailyWeather

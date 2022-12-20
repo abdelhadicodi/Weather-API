@@ -1,41 +1,71 @@
 import React, { Component } from "react";
-// import Search from "./components/Search";
+import Search from "./components/Search";
 
 // import SayHi, { SayHello } from "./components/WeatherItem";
-// import fakeWeatherData from "./fakeWeatherData.json";
+import fakeWeatherData from "./fakeWeatherData.json";
 
 import "./App.css";
-
+import mostlyCloudy from "./img/weather-icons/mostlycloudy.svg";
+import CurrentWeather from "./components/currentWeather";
+import Weatheritem from "./components/Weatheritem";
 import Header from "./components/Header";
-import Content from "./components/Content"
+// import dailyWeather from "./components/dailyWeather";
+
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Abdelhadi"
+     city:"",
+     weatherList:fakeWeatherData.list
+     
     };
   }
 
   handleInputChange = value => {
-    this.setState({ name: value });
+    this.setState({ city: value });
   };
 
   render() {
     return (
       <div className="app">
-        {/* <SayHi />
-        <SayHello color="black" name={this.state.name} />
-        <Search handleInput={this.handleInputChange} /> */}
-        {/* <header className="app__header">
-          <div className="Search__bar">
+        <Header/>
+        <main className="main">
+        
+        <CurrentWeather currentElement={this.state.weatherList[0]} image={mostlyCloudy}/>
+          <div className="days__status">
+          <div className="days__style">
+            {
+              this.state.weatherList.map((item,index)=>{
+                if(index<8 && index<0) return <Weatheritem element={item}
+              
+        />
+        
+        
+              })
+            }
+
+          </div>
+            </div>
+            </main>
+      </div>
+    );
+  }
+}
+
+export default App;
+        {/* <SayHi /> */}
+        {/* <SayHello color="black" name={this.state.name} /> */}
+         {/* <header className="app__header">
+          <Search handleInput={this.handleInputChange} />
+         </header> */}
+         
+          {/* <div className="Search__bar">
             <input className="Search__input" type="text" placeholder="city name"/>
             <button className="Search__button">Find Weather</button>
-          </div>
-        </header> */}
-        <Header />
-        <Content />
-      {/* <main className="main"> */}
+          </div> */}
+        {/* <Content /> */}
+      
           {/* <div className="current__weather">
             <div className="current__style">
               <img className="current__image" src={mostlyCloudy} alt="cloudy"/>
@@ -94,10 +124,3 @@ class App extends Component {
               </div>
 
             </div> */}
-      {/* </main> */}
-      </div>
-    );
-  }
-}
-
-export default App;
