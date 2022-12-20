@@ -11,7 +11,6 @@ import Weatheritem from "./components/Weatheritem";
 import Header from "./components/Header";
 // import dailyWeather from "./components/dailyWeather";
 
-
 class App extends Component {
   constructor(props) {
     super(props);
