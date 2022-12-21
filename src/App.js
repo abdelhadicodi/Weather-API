@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Search from "./components/Search";
 
 // import SayHi, { SayHello } from "./components/WeatherItem";
 import fakeWeatherData from "./fakeWeatherData.json";
@@ -9,6 +8,8 @@ import mostlyCloudy from "./img/weather-icons/mostlycloudy.svg";
 import CurrentWeather from "./components/currentWeather";
 import Weatheritem from "./components/Weatheritem";
 import Header from "./components/Header";
+import Search from "./components/Search";
+import DailyWeather from "./components/dailyWeather";
 // import dailyWeather from "./components/dailyWeather";
 
 class App extends Component {
@@ -16,11 +17,10 @@ class App extends Component {
     super(props);
     this.state = {
      city:"",
-     weatherList:fakeWeatherData.list
-     
+     weatherList:fakeWeatherData.list,
     };
   }
-
+  
   handleInputChange = value => {
     this.setState({ city: value });
   };
@@ -39,10 +39,9 @@ class App extends Component {
                 if(index<8 && index<0) return <Weatheritem element={item}
               
         />
-        
-        
               })
-            }
+            }  
+            <DailyWeather  />
 
           </div>
             </div>
